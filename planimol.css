@@ -1,0 +1,333 @@
+/* ==========================================================================
+   Planimol Design System · planimol.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Schrift: Plus Jakarta Sans
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+   -------------------------------------------------------------------------- */
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   01 — System-Logik
+   Basis: 1rem (16px). Alle Werte leiten sich ab.
+   Fluid sizing via clamp(min, preferred, max).
+   ══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Grundeinheit */
+  --module:        clamp(1.5rem, 1rem + 2.7vw, 3rem);   /* 24–48px */
+  --half-module:   clamp(0.75rem, 0.5rem + 1.35vw, 1.5rem);
+  --quarter-module: clamp(0.375rem, 0.25rem + 0.675vw, 0.75rem);
+
+  /* Layout */
+  --gutter:           var(--module);
+  --margin:           var(--module);
+  --section-gap:      calc(var(--module) * 2);
+
+  /* Announcement + Nav */
+  --announcement-height: 2.5rem;
+  --nav-height:          calc(var(--module) * 2);
+  --header-height:       calc(var(--announcement-height) + var(--nav-height));
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   02 — Design Tokens
+   ══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* ---------------------------------------------------------------------- */
+  /* Farben                                                                   */
+  /* ---------------------------------------------------------------------- */
+
+  /* Vordergrund / Text */
+  --fg:            #44303f;   /* Primäre Textfarbe · CMYK 10/35/0/85 */
+  --fg-muted:      #7a6b73;   /* Sekundärer Text */
+  --fg-inverse:    #ffffff;   /* Text auf dunklem Hintergrund */
+
+  /* Brand */
+  --green:         #37B03E;   /* Primärfarbe · Brand-Grün */
+  --green-hover:   #2a8f30;   /* Hover-Zustand grün */
+  --green-light:   #DFF4DB;   /* Akzent-Hintergrund · CMYK 13/0/17/85 */
+
+  /* Hintergrund */
+  --bg:            #ffffff;
+  --bg-subtle:     #f7f5f6;   /* Warmer Off-White, passend zu --fg */
+
+  /* Strukturelle Linien */
+  --border:        #c8bec4;   /* Strukturelle Borders */
+  --border-light:  #e4dee1;   /* Dekorative Trennlinien */
+
+  /* ---------------------------------------------------------------------- */
+  /* Produktfarben · nur im Produktkontext verwenden                          */
+  /* ---------------------------------------------------------------------- */
+
+  --product-artho:    #FF009E;   /* CMYK 0/100/38/0 */
+  --product-digestic: #990DFF;   /* CMYK 40/95/0/0 */
+  --product-biotic:   #26FF66;   /* CMYK 85/0/60/0 */
+  --product-ocean:    #2EF2FF;   /* CMYK 82/5/0/0 */
+  --product-gastro:   #40FF00;   /* CMYK 75/0/100/0 */
+  --product-relax:    #6E66FF;   /* CMYK 57/60/0/0 */
+  --product-cardio:   #F47C20;   /* CMYK to confirm */
+  --product-endp:     #E8356B;   /* CMYK to confirm */
+  --product-liver:    #4A90D9;   /* CMYK to confirm */
+  --product-intestic: #78FF00;   /* CMYK 53/0/100/0 */
+
+  /* ---------------------------------------------------------------------- */
+  /* Typografie                                                               */
+  /* ---------------------------------------------------------------------- */
+
+  --font:          "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono:     "JetBrains Mono", "Courier New", monospace;
+
+  --fw-regular:    400;
+  --fw-bold:       700;
+
+  /* Flüssige Schriftgrößen */
+  --text-xs:       0.75rem;                                  /* 12px – Labels */
+  --text-sm:       0.875rem;                                 /* 14px – Klein */
+  --text-base:     clamp(0.9375rem, 0.85rem + 0.3vw, 1rem); /* 15–16px – Body */
+  --text-m:        clamp(1.125rem, 0.95rem + 0.6vw, 1.375rem); /* 18–22px – H4/H3 */
+  --text-l:        clamp(1.375rem, 1rem + 1.4vw, 2rem);      /* 22–32px – H2 */
+  --text-xl:       clamp(1.875rem, 1rem + 3vw, 3.375rem);    /* 30–54px – H1 */
+
+  /* Zeilenabstände */
+  --lh-base:  1.6;
+  --lh-h3:    1.4;
+  --lh-h2:    1.2;
+  --lh-h1:    1.1;
+
+  /* Letter Spacing */
+  --ls-tight:   -0.02em;
+  --ls-normal:   0em;
+  --ls-wide:     0.05em;
+  --ls-caps:     0.1em;
+  --ls-widest:   0.15em;
+
+  /* ---------------------------------------------------------------------- */
+  /* Borders & Shape                                                          */
+  /* ---------------------------------------------------------------------- */
+
+  --radius:      0;    /* Standard: keine Rundung */
+  --radius-sm:   2px;  /* Ausnahme: Tags, Code-Blöcke */
+
+  --border-width-thin:   1px;
+  --border-width-medium: 2px;
+  --border-width-thick:  3px;
+  --border-width-heavy:  4px;
+
+  /* ---------------------------------------------------------------------- */
+  /* Shadows                                                                  */
+  /* ---------------------------------------------------------------------- */
+
+  --shadow-none: none;
+  --shadow-sm:   0 1px 2px rgba(68, 48, 63, 0.08);
+  --shadow-md:   0 2px 8px rgba(68, 48, 63, 0.10);
+  --shadow-lg:   0 4px 20px rgba(68, 48, 63, 0.12);
+
+  /* ---------------------------------------------------------------------- */
+  /* Motion                                                                   */
+  /* ---------------------------------------------------------------------- */
+
+  --dur-fast:    100ms;
+  --dur-normal:  200ms;
+  --dur-slow:    350ms;
+
+  --ease:        cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:    cubic-bezier(0, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ---------------------------------------------------------------------- */
+  /* Layout / Z-Index                                                         */
+  /* ---------------------------------------------------------------------- */
+
+  --z-base:    0;
+  --z-raised:  10;
+  --z-nav:     50;
+  --z-overlay: 100;
+  --z-modal:   200;
+  --z-toast:   300;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   03 — Styleguide UI
+   Diese Klassen steuern den Styleguide selbst, nicht das Planimol-Theme.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* → in sg.css */
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Base Reset & Grundlagen
+   ══════════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--text-base);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-base);
+  color: var(--fg);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  transition: color var(--dur-fast) var(--ease);
+}
+a:hover { color: var(--green-hover); }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   04 — Typografie
+   ══════════════════════════════════════════════════════════════════════════ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font);
+  font-weight: var(--fw-bold);
+  color: var(--fg);
+}
+
+h1 { font-size: var(--text-xl); line-height: var(--lh-h1); letter-spacing: var(--ls-tight); }
+h2 { font-size: var(--text-l);  line-height: var(--lh-h2); letter-spacing: var(--ls-tight); }
+h3 { font-size: var(--text-m);  line-height: var(--lh-h3); }
+h4 { font-size: var(--text-base); line-height: var(--lh-h3); }
+h5 { font-size: var(--text-sm); letter-spacing: var(--ls-wide); text-transform: uppercase; }
+h6 { font-size: var(--text-xs); letter-spacing: var(--ls-caps); text-transform: uppercase; }
+
+p { line-height: var(--lh-base); }
+
+/* Utility */
+.text--xs      { font-size: var(--text-xs); }
+.text--sm      { font-size: var(--text-sm); }
+.text--base    { font-size: var(--text-base); }
+.text--m       { font-size: var(--text-m); }
+.text--l       { font-size: var(--text-l); }
+.text--xl      { font-size: var(--text-xl); }
+
+.text--regular { font-weight: var(--fw-regular); }
+.text--bold    { font-weight: var(--fw-bold); }
+
+.text--muted   { color: var(--fg-muted); }
+.text--green   { color: var(--green); }
+.text--inverse { color: var(--fg-inverse); }
+
+.text--upper   { text-transform: uppercase; letter-spacing: var(--ls-caps); }
+.text--caps    { text-transform: uppercase; letter-spacing: var(--ls-widest); }
+.text--mono    { font-family: var(--font-mono); }
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--bg-subtle);
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-sm);
+  color: var(--fg);
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   05 — Farben  (Dokumentation → sg.css / styleguide.html)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   06 — Linien & Borders
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.border                { border: var(--border-width-thin) solid var(--border); border-radius: var(--radius); }
+.border--light         { border: var(--border-width-thin) solid var(--border-light); }
+.border--medium        { border: var(--border-width-medium) solid var(--border); }
+.border--thick         { border: var(--border-width-thick) solid var(--border); }
+.border--heavy         { border: var(--border-width-heavy) solid var(--border); }
+.border--green         { border: var(--border-width-medium) solid var(--green); }
+.border--dashed        { border: var(--border-width-thin) dashed var(--border); }
+.border--dotted        { border: var(--border-width-thin) dotted var(--border); }
+.border--none          { border: none; }
+
+hr {
+  border: none;
+  border-top: var(--border-width-thin) solid var(--border-light);
+  margin: var(--module) 0;
+}
+.hr--medium { border-top-width: var(--border-width-medium); border-color: var(--border); }
+.hr--thick  { border-top-width: var(--border-width-thick);  border-color: var(--fg); }
+.hr--green  { border-top-width: var(--border-width-medium); border-color: var(--green); }
+.hr--dashed { border-top-style: dashed; }
+.hr--dotted { border-top-style: dotted; }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   07 — Spacing Utilities
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.mt-q  { margin-top: var(--quarter-module); }
+.mt-h  { margin-top: var(--half-module); }
+.mt-1  { margin-top: var(--module); }
+.mt-2  { margin-top: calc(var(--module) * 2); }
+
+.mb-q  { margin-bottom: var(--quarter-module); }
+.mb-h  { margin-bottom: var(--half-module); }
+.mb-1  { margin-bottom: var(--module); }
+.mb-2  { margin-bottom: calc(var(--module) * 2); }
+
+.p-q   { padding: var(--quarter-module); }
+.p-h   { padding: var(--half-module); }
+.p-1   { padding: var(--module); }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   08 — Spaltenraster
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gutter);
+}
+
+.col-1  { grid-column: span 1; }
+.col-2  { grid-column: span 2; }
+.col-3  { grid-column: span 3; }
+.col-4  { grid-column: span 4; }
+.col-6  { grid-column: span 6; }
+.col-8  { grid-column: span 8; }
+.col-12 { grid-column: span 12; }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   09 — Responsive Breakpoints
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* sm: 640px / md: 768px / lg: 1024px / xl: 1280px / 2xl: 1440px */
+
+@media (max-width: 767px) {
+  .col-3, .col-4, .col-6, .col-8 { grid-column: span 12; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .col-3  { grid-column: span 6; }
+  .col-4  { grid-column: span 6; }
+}

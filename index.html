@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planimol Styleguide</title>
+  <link rel="icon" href="assets/graphics/Planimol_Favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="planimol.css">
+  <link rel="stylesheet" href="sg.css">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body>
+
+<!-- ═══ ANNOUNCEMENT BAR ════════════════════════════════════════════════ -->
+<div class="announcement-bar">
+  <div class="announcement-bar__track">
+    <span class="announcement-bar__item">Planimol Styleguide</span>
+    <span class="announcement-bar__item">Your natural pet pharmacy</span>
+    <span class="announcement-bar__item">Planimol Styleguide</span>
+    <span class="announcement-bar__item">Your natural pet pharmacy</span>
+    <span class="announcement-bar__item">Planimol Styleguide</span>
+    <span class="announcement-bar__item">Your natural pet pharmacy</span>
+    <span class="announcement-bar__item">Planimol Styleguide</span>
+    <span class="announcement-bar__item">Your natural pet pharmacy</span>
+  </div>
+</div>
+
+<!-- ═══ NAVIGATION ══════════════════════════════════════════════════════ -->
+<nav class="site-nav" id="siteNav" aria-label="Page navigation">
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="nav-logo">
+    <img src="assets/graphics/Planimol_Logo.svg" alt="Planimol" id="navLogo">
+  </div>
+
+
+</nav>
+
+<!-- ═══ MOBILE MENU ══════════════════════════════════════════════════════ -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Main navigation">
+
+  <div>
+    <span class="mobile-menu__group-label">Foundation</span>
+    <a href="#logo"             onclick="closeMenu()">00 — Logo</a>
+    <a href="#pet-pharmacy-icon" onclick="closeMenu()">01 — Pet Pharmacy Icon</a>
+    <a href="#packshots"        onclick="closeMenu()">02 — Packshots</a>
+    <a href="#flyer"            onclick="closeMenu()">03 — Product Flyer</a>
+    <a href="#animation"        onclick="closeMenu()">04 — Illustration Animation</a>
+    <a href="#typo"             onclick="closeMenu()">05 — Typography</a>
+    <a href="#colors"           onclick="closeMenu()">06 — Colours</a>
+    <a href="#borders"          onclick="closeMenu()" class="--indent --soon">07 — Lines &amp; Borders</a>
+    <a href="#spacing"          onclick="closeMenu()" class="--indent --soon">08 — Spacing</a>
+    <a href="#columns"          onclick="closeMenu()" class="--indent --soon">09 — Column Grid</a>
+    <a href="#responsive"       onclick="closeMenu()" class="--indent --soon">10 — Responsive</a>
+  </div>
+
+  <div>
+    <span class="mobile-menu__group-label">Atoms &amp; Base</span>
+    <a href="#" class="--soon">10 — Buttons</a>
+    <a href="#" class="--soon">11 — Badges &amp; Labels</a>
+    <a href="#" class="--soon">12 — Forms</a>
+    <a href="#" class="--soon">13 — Icons</a>
+  </div>
+
+</div>
+
+<!-- ═══ MAIN CONTENT ════════════════════════════════════════════════════ -->
+<main>
+<div class="page">
+
+  <!-- Header -->
+  <header class="header">
+    <h1>Styleguide</h1>
+    <p>Planimol is your natural pet pharmacy — developed by veterinarians, with plant-based ingredients for sustainable and effective animal health. Our mission: premium, evidence-backed products that support your pet naturally, free from unnecessary additives.</p>
+  </header>
+
+
+  <!-- ═══ 00 — LOGO ════════════════════════════════════════════════════ -->
+  <section class="sg-section" id="logo">
+    <h2 class="section-label">00 — Logo</h2>
+
+    <div class="demo-label">Standard — on light background</div>
+    <div class="sg-demo-pad">
+      <div class="sg-logo-row">
+        <div class="sg-logo-variant">
+          <span class="sg-logo-variant__label">Full logo</span>
+          <img src="assets/graphics/Planimol_Logo.svg" alt="Planimol" class="sg-logo-demo">
+        </div>
+        <div class="sg-logo-variant">
+          <span class="sg-logo-variant__label">Icon mark</span>
+          <img src="assets/graphics/Planimol_Favicon.svg" alt="Planimol icon" class="sg-logo-demo">
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-label">Inverse — on dark background</div>
+    <div class="sg-demo-pad --dark">
+      <div class="sg-logo-row">
+        <div class="sg-logo-variant">
+          <span class="sg-logo-variant__label" style="color:var(--fg-muted)">Full logo (CSS filter)</span>
+          <img src="assets/graphics/Planimol_Logo.svg" alt="Planimol" class="sg-logo-demo" style="filter:brightness(0) invert(1);">
+        </div>
+        <div class="sg-logo-variant">
+          <span class="sg-logo-variant__label" style="color:var(--fg-muted)">Icon mark</span>
+          <img src="assets/graphics/Planimol_Favicon.svg" alt="Planimol icon" class="sg-logo-demo">
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-label">On accent background</div>
+    <div class="sg-demo-pad --accent">
+      <img src="assets/graphics/Planimol_Logo.svg" alt="Planimol" class="sg-logo-demo">
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Minimum width</th><td>100px — below this, use the icon mark only</td></tr>
+      <tr><th>Icon mark</th><td><code>--green</code> (#37B03E) — never alter the colour</td></tr>
+      <tr><th>Wordmark</th><td><code>--fg</code> (#44303f) on light · <code>#ffffff</code> on dark via CSS filter</td></tr>
+      <tr><th>Downloads</th><td>
+        <a href="https://drive.google.com/drive/folders/1k28C9-1Y0S5HdkU9wJvNfNwgy4Acgyhk?usp=sharing" target="_blank" rel="noopener" class="sg-logo-download">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 1v9M8 10l-3-3M8 10l3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          All formats — Google Drive
+        </a>
+      </td></tr>
+    </table>
+  </section>
+
+
+  <!-- ═══ 01 — PET PHARMACY ICON ══════════════════════════════════════ -->
+  <section class="sg-section" id="pet-pharmacy-icon">
+    <h2 class="section-label">01 — Pet Pharmacy Icon</h2>
+
+    <div class="demo-label">Standard — on light background</div>
+    <div class="sg-demo-pad">
+      <div class="sg-icon-row">
+        <div class="sg-icon-variant">
+          <span class="sg-logo-variant__label">Default</span>
+          <img src="assets/graphics/Planimol_Pet_Pharmacy_Icon.svg" alt="Your natural pet pharmacy" class="sg-icon-demo">
+        </div>
+        <div class="sg-icon-variant">
+          <span class="sg-logo-variant__label">On accent background</span>
+          <div style="background:var(--green-light); display:inline-flex; padding:var(--half-module);">
+            <img src="assets/graphics/Planimol_Pet_Pharmacy_Icon.svg" alt="Your natural pet pharmacy" class="sg-icon-demo">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Colours</th><td>Ring text <code>--fg</code> (#44303f) · cross mark <code>--green</code> (#39b54a)</td></tr>
+      <tr><th>Usage</th><td>Packaging, marketing materials, product pages — never recolour individual elements</td></tr>
+      <tr><th>Download</th><td>
+        <a href="https://drive.google.com/open?id=1bfeht-59qyGjAb7hqo1HCgzh4bF_h1Tr&usp=drive_fs" target="_blank" rel="noopener" class="sg-logo-download">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 1v9M8 10l-3-3M8 10l3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Pet Pharmacy Icon SVG — Google Drive
+        </a>
+      </td></tr>
+    </table>
+  </section>
+
+
+  <!-- ═══ 02 — PACKSHOTS ══════════════════════════════════════════════ -->
+  <section class="sg-section" id="packshots">
+    <h2 class="section-label">02 — Packshots</h2>
+
+    <div class="demo-label">Examples</div>
+    <div class="sg-packshot-grid">
+
+      <div class="sg-packshot-item">
+        <div class="sg-packshot-item__img">
+          <img src="assets/images/Planimol_Digestic_150g_Pulver_73x105_3000px_260326.png"
+               alt="Planimol Digestic 150g Powder">
+        </div>
+        <div class="sg-packshot-item__label">Digestic · 150g Powder</div>
+      </div>
+
+      <div class="sg-packshot-item">
+        <div class="sg-packshot-item__img">
+          <img src="assets/images/Planimol_Gastro_30x2g_Tabletten_56x70_3000px_260326.png"
+               alt="Planimol Gastro 30×2g Tablets">
+        </div>
+        <div class="sg-packshot-item__label">Gastro · 30×2g Tablets</div>
+      </div>
+
+      <div class="sg-packshot-item">
+        <div class="sg-packshot-item__img">
+          <img src="assets/images/Planimol_Ocean_100ml_Oel_3000px_260326.png"
+               alt="Planimol Ocean 100ml Oil">
+        </div>
+        <div class="sg-packshot-item__label">Ocean · 100ml Oil</div>
+      </div>
+
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Format</th><td>PNG · transparent background · 3000 px longest edge</td></tr>
+      <tr><th>Backgrounds</th><td>White (<code>--bg</code>) only — never on coloured backgrounds</td></tr>
+      <tr><th>Restrictions</th><td>No cropping, distortion, colour filters, or drop shadows</td></tr>
+      <tr><th>Downloads</th><td>
+        <a href="https://drive.google.com/drive/folders/16Y26n_vO3P-84CLfUdJkHorXwaMAVjJ0?usp=sharing" target="_blank" rel="noopener" class="sg-logo-download">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 1v9M8 10l-3-3M8 10l3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          All packshots — Google Drive
+        </a>
+      </td></tr>
+    </table>
+  </section>
+
+
+  <!-- ═══ 03 — PRODUCT FLYER ══════════════════════════════════════════ -->
+  <section class="sg-section" id="flyer">
+    <h2 class="section-label">03 — Product Flyer</h2>
+
+    <div class="demo-label">Front &amp; Back</div>
+    <div class="sg-flyer-grid">
+      <div class="sg-flyer-item">
+        <img src="assets/images/2026_04_28_Planimol_Katalog_A6_EN_Front.jpg"
+             alt="Planimol A6 Flyer — Front"
+             class="sg-flyer-item__img">
+        <div class="sg-flyer-item__label">Front</div>
+      </div>
+      <div class="sg-flyer-item">
+        <img src="assets/images/2026_04_28_Planimol_Katalog_A6_EN_Back.jpg"
+             alt="Planimol A6 Flyer — Back"
+             class="sg-flyer-item__img">
+        <div class="sg-flyer-item__label">Back</div>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Size</th><td>A6 — 148 × 105 mm</td></tr>
+      <tr><th>Language</th><td>English</td></tr>
+      <tr><th>Format</th><td>PDF (print) · JPG previews at 300 dpi</td></tr>
+      <tr><th>Download</th><td>
+        <a href="https://drive.google.com/open?id=1qOL6MhPC0Xi5pFIOjAnbaAUfGnoj4kA2&usp=drive_fs" target="_blank" rel="noopener" class="sg-logo-download">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 1v9M8 10l-3-3M8 10l3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Product Flyer PDF — Google Drive
+        </a>
+      </td></tr>
+    </table>
+  </section>
+
+
+  <!-- ═══ 04 — ILLUSTRATION ANIMATION ════════════════════════════════ -->
+  <section class="sg-section" id="animation">
+    <h2 class="section-label">04 — Illustration Animation</h2>
+
+    <div class="demo-label">Siggi — der Planimol-Hund</div>
+    <div class="sg-demo-pad">
+      <div class="sg-lottie-wrap">
+        <div class="sg-lottie-variant">
+          <lottie-player
+            src="assets/lotties/planimol_animation_siggi_schmeterling_json.json"
+            autoplay
+            loop
+            class="sg-lottie-player">
+          </lottie-player>
+          <span class="sg-lottie-label">Siggi · Schmetterling</span>
+        </div>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Format</th><td>Lottie JSON — skalierbar, leichtgewichtig, framegenau</td></tr>
+      <tr><th>Player</th><td><code>&lt;lottie-player&gt;</code> via <a href="https://lottiefiles.com/web-player" target="_blank" rel="noopener">LottieFiles Web Player</a></td></tr>
+      <tr><th>Verwendung</th><td>Hero-Bereiche, Onboarding, Produktseiten — nie als Hintergrundanimation</td></tr>
+    </table>
+  </section>
+
+
+  <!-- ═══ 05 — TYPOGRAPHY ══════════════════════════════════════════════ -->
+  <section class="sg-section" id="typo">
+    <h2 class="section-label">05 — Typography</h2>
+
+    <h3 class="sg-h3">Headings</h3>
+    <div class="sg-demo-pad" style="padding-top:var(--half-module); padding-bottom:var(--half-module);">
+      <div class="sg-type-row">
+        <div class="sg-type-row__meta">h1<br>--text-xl<br>clamp(30–54px)<br>Bold · lh 1.1</div>
+        <h1>Lorem ipsum dolor sit amet</h1>
+      </div>
+      <div class="sg-type-row">
+        <div class="sg-type-row__meta">h2<br>--text-l<br>clamp(22–32px)<br>Bold · lh 1.2</div>
+        <h2>Consectetur adipiscing elit</h2>
+      </div>
+      <div class="sg-type-row">
+        <div class="sg-type-row__meta">h3<br>--text-m<br>clamp(18–22px)<br>Bold · lh 1.4</div>
+        <h3>Sed do eiusmod tempor incididunt</h3>
+      </div>
+      <div class="sg-type-row">
+        <div class="sg-type-row__meta">h4<br>--text-base<br>clamp(15–16px)<br>Bold · lh 1.4</div>
+        <h4>Ut labore et dolore magna aliqua</h4>
+      </div>
+      <div class="sg-type-row">
+        <div class="sg-type-row__meta">h5<br>--text-sm · 14px<br>Bold · Uppercase</div>
+        <h5>Ut enim ad minim</h5>
+      </div>
+      <div class="sg-type-row">
+        <div class="sg-type-row__meta">h6<br>--text-xs · 12px<br>Bold · Uppercase</div>
+        <h6>Quis nostrud exercitation</h6>
+      </div>
+    </div>
+
+    <h3 class="sg-h3 --top">Body Text &amp; Variants</h3>
+    <div class="sg-demo-pad" style="padding-top:var(--half-module); padding-bottom:var(--half-module);">
+      <div class="sg-type-row">
+        <div class="sg-type-row__meta">Body<br>--text-base<br>Regular · lh 1.6</div>
+        <p>Planimol is your natural pet pharmacy. This body text demonstrates the base typography at standard reading size with comfortable line spacing.</p>
+      </div>
+      <div class="sg-type-row">
+        <div class="sg-type-row__meta">.text--muted<br>Secondary</div>
+        <p class="text--muted">Supporting information, metadata and secondary copy in a muted text colour.</p>
+      </div>
+      <div class="sg-type-row">
+        <div class="sg-type-row__meta">.text--sm<br>14px</div>
+        <p class="text--sm">Small text for labels, notes and footnotes.</p>
+      </div>
+      <div class="sg-type-row">
+        <div class="sg-type-row__meta">.text--xs<br>12px</div>
+        <p class="text--xs">Captions and compact metadata.</p>
+      </div>
+      <div class="sg-type-row">
+        <div class="sg-type-row__meta">.text--upper<br>Uppercase</div>
+        <p class="text--xs text--upper">Category label · Section title</p>
+      </div>
+      <div class="sg-type-row">
+        <div class="sg-type-row__meta">.text--green<br>Brand colour</div>
+        <p class="text--green">Planimol — your natural pet pharmacy</p>
+      </div>
+      <div class="sg-type-row">
+        <div class="sg-type-row__meta">.text--mono<br>Code</div>
+        <p class="text--mono text--sm">--green: #37B03E;</p>
+      </div>
+    </div>
+
+    <h3 class="sg-h3 --top">Font Weights</h3>
+    <table class="spec-table">
+      <tr><th><code>--fw-regular</code></th><td style="font-weight:400; font-size:var(--text-m);">Lorem ipsum dolor — Regular 400</td></tr>
+      <tr><th><code>--fw-bold</code></th><td style="font-weight:700; font-size:var(--text-m);">Lorem ipsum dolor — Bold 700</td></tr>
+    </table>
+
+    <h3 class="sg-h3 --top">Font Downloads</h3>
+    <table class="spec-table">
+      <tr>
+        <th>Plus Jakarta Sans</th>
+        <td>
+          <a href="https://fonts.google.com/specimen/Plus+Jakarta+Sans" target="_blank" rel="noopener" class="sg-logo-download">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 1v9M8 10l-3-3M8 10l3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Google Fonts
+          </a>
+          &nbsp;
+          <span class="text--xs text--muted">Weights used: 400 Regular · 700 Bold</span>
+        </td>
+      </tr>
+      <tr>
+        <th>embed code</th>
+        <td><code class="text--xs">@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap');</code></td>
+      </tr>
+    </table>
+  </section>
+
+
+  <!-- ═══ 06 — COLOURS ═════════════════════════════════════════════════ -->
+  <section class="sg-section" id="colors">
+    <h2 class="section-label">06 — Colours</h2>
+
+    <h3 class="sg-h3">Brand Colours</h3>
+    <div class="sg-color-grid">
+      <div class="sg-color-card">
+        <div class="sg-color-card__swatch" style="background:#37B03E"></div>
+        <div class="sg-color-card__info">
+          <span class="sg-color-card__name">Brand Green</span>
+          <span class="sg-color-card__token">--green</span>
+        </div>
+        <div class="sg-color-card__meta">#37B03E · CMYK 75/0/100/0</div>
+      </div>
+      <div class="sg-color-card">
+        <div class="sg-color-card__swatch" style="background:#2a8f30"></div>
+        <div class="sg-color-card__info">
+          <span class="sg-color-card__name">Brand Green Hover</span>
+          <span class="sg-color-card__token">--green-hover</span>
+        </div>
+        <div class="sg-color-card__meta">#2a8f30 · Interaction state</div>
+      </div>
+      <div class="sg-color-card">
+        <div class="sg-color-card__swatch" style="background:#DFF4DB; border-bottom:1px solid #e0e0e0;"></div>
+        <div class="sg-color-card__info">
+          <span class="sg-color-card__name">Accent Light</span>
+          <span class="sg-color-card__token">--green-light</span>
+        </div>
+        <div class="sg-color-card__meta">#DFF4DB · CMYK 13/0/17/85</div>
+      </div>
+    </div>
+
+    <h3 class="sg-h3 --top">Text Colours</h3>
+    <div class="sg-color-grid">
+      <div class="sg-color-card">
+        <div class="sg-color-card__swatch" style="background:#44303f"></div>
+        <div class="sg-color-card__info">
+          <span class="sg-color-card__name">Foreground</span>
+          <span class="sg-color-card__token">--fg</span>
+        </div>
+        <div class="sg-color-card__meta">#44303f · CMYK 10/35/0/85</div>
+      </div>
+      <div class="sg-color-card">
+        <div class="sg-color-card__swatch" style="background:#7a6b73"></div>
+        <div class="sg-color-card__info">
+          <span class="sg-color-card__name">Foreground Muted</span>
+          <span class="sg-color-card__token">--fg-muted</span>
+        </div>
+        <div class="sg-color-card__meta">#7a6b73 · Secondary text</div>
+      </div>
+      <div class="sg-color-card">
+        <div class="sg-color-card__swatch" style="background:#ffffff; border-bottom:1px solid #e0e0e0;"></div>
+        <div class="sg-color-card__info">
+          <span class="sg-color-card__name">Inverse</span>
+          <span class="sg-color-card__token">--fg-inverse</span>
+        </div>
+        <div class="sg-color-card__meta">#ffffff · Text on dark</div>
+      </div>
+    </div>
+
+    <h3 class="sg-h3 --top">Background &amp; Structural Colours</h3>
+    <div class="sg-color-grid">
+      <div class="sg-color-card">
+        <div class="sg-color-card__swatch" style="background:#ffffff; border-bottom:1px solid #e0e0e0;"></div>
+        <div class="sg-color-card__info">
+          <span class="sg-color-card__name">Background</span>
+          <span class="sg-color-card__token">--bg</span>
+        </div>
+        <div class="sg-color-card__meta">#ffffff</div>
+      </div>
+      <div class="sg-color-card">
+        <div class="sg-color-card__swatch" style="background:#f7f5f6; border-bottom:1px solid #e0e0e0;"></div>
+        <div class="sg-color-card__info">
+          <span class="sg-color-card__name">Background Subtle</span>
+          <span class="sg-color-card__token">--bg-subtle</span>
+        </div>
+        <div class="sg-color-card__meta">#f7f5f6 · Boxes, placeholders</div>
+      </div>
+      <div class="sg-color-card">
+        <div class="sg-color-card__swatch" style="background:#c8bec4"></div>
+        <div class="sg-color-card__info">
+          <span class="sg-color-card__name">Border</span>
+          <span class="sg-color-card__token">--border</span>
+        </div>
+        <div class="sg-color-card__meta">#c8bec4 · Structural lines</div>
+      </div>
+      <div class="sg-color-card">
+        <div class="sg-color-card__swatch" style="background:#e4dee1; border-bottom:1px solid #e0e0e0;"></div>
+        <div class="sg-color-card__info">
+          <span class="sg-color-card__name">Border Light</span>
+          <span class="sg-color-card__token">--border-light</span>
+        </div>
+        <div class="sg-color-card__meta">#e4dee1 · Decorative dividers</div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+</div><!-- /.page -->
+</main>
+
+<script>
+  function toggleMenu() {
+    const nav  = document.getElementById('siteNav');
+    const menu = document.getElementById('mobileMenu');
+    const btn  = document.getElementById('hamburger');
+    menu.style.top = nav.getBoundingClientRect().bottom + 'px';
+    const open = menu.classList.toggle('--open');
+    btn.classList.toggle('--open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('--open');
+    document.getElementById('hamburger').classList.remove('--open');
+    document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMenu();
+  });
+</script>
+
+</body>
+</html>
