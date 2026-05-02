@@ -426,6 +426,11 @@
   width: auto;
 }
 
+/* Icon mark: constrained to the cap-height of the full logo text */
+.sg-logo-demo--icon {
+  height: clamp(1.25rem, 0.6rem + 2.5vw, 2.25rem);
+}
+
 .sg-logo-row {
   display: flex;
   align-items: center;
@@ -531,10 +536,11 @@
 
 .sg-flyer-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 0;
   margin-bottom: var(--module);
   border: var(--border-width-thin) solid var(--border-light);
+  max-width: 480px;
 }
 
 .sg-flyer-item {
@@ -542,7 +548,7 @@
 }
 
 .sg-flyer-item + .sg-flyer-item {
-  border-left: var(--border-width-thin) solid var(--border-light);
+  border-top: var(--border-width-thin) solid var(--border-light);
 }
 
 .sg-flyer-item__img {
