@@ -345,15 +345,18 @@
 
   .spec-table tr {
     border-top: var(--border-width-thin) solid var(--border-light);
-    padding: 0.75rem var(--half-module);
+    padding: 0.75rem 0;
   }
 
   .spec-table tr:first-child {
     border-top: var(--border-width-thin) solid var(--border);
   }
 
+  /* reset all cell borders (incl. tr:first-child specificity) */
   .spec-table th,
-  .spec-table td {
+  .spec-table td,
+  .spec-table tr:first-child th,
+  .spec-table tr:first-child td {
     border: none;
     padding: 0;
     white-space: normal;
