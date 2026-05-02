@@ -453,6 +453,14 @@
   padding-top: 0.2em;
 }
 
+@media (max-width: 639px) {
+  .sg-type-row {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 0.35rem;
+  }
+}
+
 
 /* ══════════════════════════════════════════════════════════════════════════
    Logo-Demo
