@@ -426,10 +426,6 @@
   width: auto;
 }
 
-/* Icon mark: constrained to the cap-height of the full logo text */
-.sg-logo-demo--icon {
-  height: clamp(1.6rem, 0.8rem + 3.2vw, 2.8rem);
-}
 
 .sg-logo-row {
   display: flex;
