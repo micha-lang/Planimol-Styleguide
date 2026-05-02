@@ -540,7 +540,6 @@
   gap: 0;
   margin-bottom: var(--module);
   border: var(--border-width-thin) solid var(--border-light);
-  max-width: 480px;
 }
 
 .sg-flyer-item {
