@@ -332,6 +332,43 @@
   color: var(--fg-muted);
 }
 
+/* Mobile: stack label above value */
+@media (max-width: 639px) {
+  .spec-table,
+  .spec-table tbody,
+  .spec-table tr,
+  .spec-table th,
+  .spec-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .spec-table tr {
+    border-top: var(--border-width-thin) solid var(--border-light);
+    padding: 0.75rem var(--half-module);
+  }
+
+  .spec-table tr:first-child {
+    border-top: var(--border-width-thin) solid var(--border);
+  }
+
+  .spec-table th,
+  .spec-table td {
+    border: none;
+    padding: 0;
+    white-space: normal;
+    width: auto;
+  }
+
+  .spec-table th {
+    margin-bottom: 0.2rem;
+  }
+
+  .spec-table tr:last-child {
+    border-bottom: var(--border-width-thin) solid var(--border-light);
+  }
+}
+
 
 /* ══════════════════════════════════════════════════════════════════════════
    Farb-Swatches
